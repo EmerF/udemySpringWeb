@@ -24,7 +24,7 @@ public class SpringWebJpaApplication {
 
 		ServletRegistrationBean<FacesServlet> srb = new ServletRegistrationBean<FacesServlet>();
 		srb.setServlet(new FacesServlet());
-		srb.setUrlMappings(Arrays.asList("*.xhtml"));
+		srb.setUrlMappings(Arrays.asList("*.jsf"));
 		srb.setLoadOnStartup(1);
 		return srb;
 	}
