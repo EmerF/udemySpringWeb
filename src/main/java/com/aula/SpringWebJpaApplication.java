@@ -16,17 +16,23 @@ public class SpringWebJpaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringWebJpaApplication.class, args);
 	}
-
-	// configs para execução do JSF
+	
+	/*
+	 * @Bean ServletRegistrationBean<FacesServlet>
+	 * servletRegistration(ServletContext servletContext){
+	 * servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration",
+	 * Boolean.TRUE.toString()); ServletRegistrationBean<FacesServlet> regBean = new
+	 * ServletRegistrationBean<FacesServlet>(); regBean.setServlet(new
+	 * FacesServlet()); regBean.setUrlMappings(Arrays.asList("*.jsf"));
+	 * regBean.setLoadOnStartup(1); return regBean; }
+	 */
+	
 	@Bean
-	ServletRegistrationBean<FacesServlet> jsfServletRegistration(ServletContext servletContext) {
-		servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration", Boolean.TRUE.toString());
-
-		ServletRegistrationBean<FacesServlet> srb = new ServletRegistrationBean<FacesServlet>();
-		srb.setServlet(new FacesServlet());
-		srb.setUrlMappings(Arrays.asList("*.jsf"));
-		srb.setLoadOnStartup(1);
-		return srb;
+	public ServletRegistrationBean <FacesServlet> servletRegistrationBean() {
+	    FacesServlet servlet = new FacesServlet();
+	    ServletRegistrationBean <FacesServlet> servletRegistrationBean = new ServletRegistrationBean<FacesServlet>(servlet,"*.jsf");
+	    return servletRegistrationBean;
 	}
+	
 
 }

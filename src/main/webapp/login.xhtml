@@ -1,21 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:h="http://java.sun.com/jsf/html"> 
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head/> 
+<h:form>
+	<p:panelGrid id="panelLogin" columns="2"
+	layout="tabular">
 	
-<h:head />
-
-<h:form id="formLogin">
-
-	<p:panelGrid id="panelGeral" header="Dados de Login" columns="2"
-		layout="tabular">
-		<p:outputLabel value="Login: " for="txtLogin" />
-		<p:inputText value="" id="txtLogin" />
-		<p:outputLabel value="Senha: " for="txtSenha" />
-		<p:password value="Senha" id="txtSenha" />
-		<p:commandButton value="Login" action="#" ajax="false" />
+	<p:outputLabel for="txtLogin" value="Login:"/>
+	<p:inputText id="txtLogin" value="teste" />
+	<p:outputLabel for="txtSenha"/>
+	<p:password id="txtSenha"/>
+	
 	</p:panelGrid>
+
 </h:form>
 </html>
