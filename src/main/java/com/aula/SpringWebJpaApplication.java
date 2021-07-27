@@ -1,9 +1,6 @@
 package com.aula;
 
-import java.util.Arrays;
-
 import javax.faces.webapp.FacesServlet;
-import javax.servlet.ServletContext;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,20 +15,18 @@ public class SpringWebJpaApplication {
 	}
 	
 	/*
-	 * @Bean ServletRegistrationBean<FacesServlet>
-	 * servletRegistration(ServletContext servletContext){
-	 * servletContext.setInitParameter("com.sun.faces.forceLoadConfiguration",
-	 * Boolean.TRUE.toString()); ServletRegistrationBean<FacesServlet> regBean = new
-	 * ServletRegistrationBean<FacesServlet>(); regBean.setServlet(new
-	 * FacesServlet()); regBean.setUrlMappings(Arrays.asList("*.jsf"));
-	 * regBean.setLoadOnStartup(1); return regBean; }
+	 * @Bean public ServletRegistrationBean <FacesServlet> servletRegistrationBean()
+	 * { FacesServlet servlet = new FacesServlet(); ServletRegistrationBean
+	 * <FacesServlet> servletRegistrationBean = new
+	 * ServletRegistrationBean<FacesServlet>(servlet,"*.jsf"); return
+	 * servletRegistrationBean; }
 	 */
 	
 	@Bean
 	public ServletRegistrationBean <FacesServlet> servletRegistrationBean() {
-	    FacesServlet servlet = new FacesServlet();
-	    ServletRegistrationBean <FacesServlet> servletRegistrationBean = new ServletRegistrationBean<FacesServlet>(servlet,"*.jsf");
-	    return servletRegistrationBean;
+	    //FacesServlet servlet = new FacesServlet();
+	    //ServletRegistrationBean <FacesServlet> servletRegistrationBean = 	new ServletRegistrationBean<FacesServlet>(servlet,"*.jsf");
+	    return new ServletRegistrationBean<FacesServlet>(new FacesServlet(),"*.jsf");
 	}
 	
 
