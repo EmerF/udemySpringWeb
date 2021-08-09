@@ -11,10 +11,11 @@
 	layout="tabular">
 	
 	<p:outputLabel for="txtLogin" value="Login:"/>
-	<p:inputText id="txtLogin" value="teste" />
-	<p:outputLabel for="txtSenha"/>
-	<p:password id="txtSenha"/>
+	<p:inputText id="txtLogin" value="#{loginMB.login.login}" />
 	
+	<p:outputLabel for="txtSenha" value="Senha:"/>
+	<p:password id="txtSenha" value="#{loginMB.login.senha}"/>
+	<p:commandButton value="Login" action="#{loginMB.loginDoSistema()}" ajax="false"/>
 	</p:panelGrid>
 
 </h:form>

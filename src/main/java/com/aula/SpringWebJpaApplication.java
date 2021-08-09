@@ -14,20 +14,10 @@ public class SpringWebJpaApplication {
 		SpringApplication.run(SpringWebJpaApplication.class, args);
 	}
 	
-	/*
-	 * @Bean public ServletRegistrationBean <FacesServlet> servletRegistrationBean()
-	 * { FacesServlet servlet = new FacesServlet(); ServletRegistrationBean
-	 * <FacesServlet> servletRegistrationBean = new
-	 * ServletRegistrationBean<FacesServlet>(servlet,"*.jsf"); return
-	 * servletRegistrationBean; }
-	 */
-	
 	@Bean
-	public ServletRegistrationBean <FacesServlet> servletRegistrationBean() {
-	    //FacesServlet servlet = new FacesServlet();
-	    //ServletRegistrationBean <FacesServlet> servletRegistrationBean = 	new ServletRegistrationBean<FacesServlet>(servlet,"*.jsf");
-	    return new ServletRegistrationBean<FacesServlet>(new FacesServlet(),"*.jsf");
+	public ServletRegistrationBean<FacesServlet> servletRegistration(){
+		
+		return new ServletRegistrationBean<FacesServlet>(new FacesServlet(), "*.jsf"); 
 	}
 	
-
 }
