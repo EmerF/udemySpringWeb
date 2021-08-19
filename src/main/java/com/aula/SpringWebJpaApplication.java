@@ -20,6 +20,7 @@ public class SpringWebJpaApplication {
 	public ServletRegistrationBean<FacesServlet> servletRegistration(){
 		return new ServletRegistrationBean<FacesServlet>(new FacesServlet(), "*.jsf");
 	}
+	
 	@Bean
     public Login loginMapper() {
         return new Login ();

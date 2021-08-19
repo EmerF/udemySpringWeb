@@ -1,4 +1,3 @@
-
 package com.aula;
 
 import javax.faces.bean.ManagedBean;
@@ -14,16 +13,18 @@ import com.aula.service.LoginService;
 @Component
 @ViewScoped
 public class LoginMB {
-
+	
 	@Autowired
 	private LoginService loginService;
 	private boolean sucessoLogin;
-
+	
 	@Autowired
 	private Login login;
-
+	
 	public void loginDoSistema() {
-		sucessoLogin =  loginService.logarNoSistema(getLogin());
+		
+		sucessoLogin = loginService.loginDoSistema(getLogin());
+		System.out.println("Logou no sistema: " + sucessoLogin);
 	}
 
 	public Login getLogin() {
@@ -41,6 +42,8 @@ public class LoginMB {
 	public void setSucessoLogin(boolean sucessoLogin) {
 		this.sucessoLogin = sucessoLogin;
 	}
+	
+	
 	
 
 }
