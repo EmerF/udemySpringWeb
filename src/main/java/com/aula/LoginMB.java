@@ -1,3 +1,4 @@
+
 package com.aula;
 
 import javax.faces.bean.ManagedBean;
@@ -7,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.aula.model.Login;
-
-import br.com.aula.reservamaquina.service.LoginService;
+import com.aula.service.LoginService;
 
 @ManagedBean(name = "loginMB")
 @Component
@@ -17,10 +17,10 @@ public class LoginMB {
 
 	@Autowired
 	private LoginService loginService;
-	
+
 	@Autowired
 	private Login login;
-	
+
 	public String loginDoSistema() {
 		return loginService.logarNoSistema(getLogin());
 	}

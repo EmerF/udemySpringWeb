@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
+import com.aula.model.Login;
+
 @SpringBootApplication
 public class SpringWebJpaApplication {
 
@@ -16,8 +18,10 @@ public class SpringWebJpaApplication {
 	
 	@Bean
 	public ServletRegistrationBean<FacesServlet> servletRegistration(){
-		
-		return new ServletRegistrationBean<FacesServlet>(new FacesServlet(), "*.jsf"); 
+		return new ServletRegistrationBean<FacesServlet>(new FacesServlet(), "*.jsf");
 	}
-	
+	@Bean
+    public Login loginMapper() {
+        return new Login ();
+    }
 }
