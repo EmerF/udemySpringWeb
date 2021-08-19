@@ -16,8 +16,20 @@
 		<p:outputLabel for="txtSenha" value="Senha:" />
 		<p:password id="txtSenha" value="#{loginMB.login.senha}" />
 		<p:commandButton value="Login" action="#{loginMB.loginDoSistema()}" ajax="false"
-		update="" />
+		update="pnlReservas" />
+		
 	</p:panelGrid>
+	<p:panel id="pnlReservas" header="Usuários do Sistema"
+		visible="#{loginMB.sucessoLogin}">
+		
+		<p:column headerText="Login" style="text-align: center;" >
+				<h:outputText value="Emerson" />
+		</p:column>
+		<p:column headerText="Senha" style="text-align: center;" >
+				<h:outputText value="Password" />
+		</p:column>
+		
+		</p:panel>
 
 </h:form> 
 

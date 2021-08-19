@@ -17,12 +17,13 @@ public class LoginMB {
 
 	@Autowired
 	private LoginService loginService;
+	private boolean sucessoLogin;
 
 	@Autowired
 	private Login login;
 
-	public String loginDoSistema() {
-		return loginService.logarNoSistema(getLogin());
+	public void loginDoSistema() {
+		sucessoLogin =  loginService.logarNoSistema(getLogin());
 	}
 
 	public Login getLogin() {
@@ -32,5 +33,14 @@ public class LoginMB {
 	public void setLogin(Login login) {
 		this.login = login;
 	}
+
+	public boolean isSucessoLogin() {
+		return sucessoLogin;
+	}
+
+	public void setSucessoLogin(boolean sucessoLogin) {
+		this.sucessoLogin = sucessoLogin;
+	}
+	
 
 }

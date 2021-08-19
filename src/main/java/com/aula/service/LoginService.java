@@ -13,12 +13,13 @@ import com.aula.model.Login;
 @ViewScoped
 public class LoginService {
 	
-	public String logarNoSistema(Login login) {
-		if(login.getLogin().equals("teste") && login.getSenha().equals("123")){
-			System.out.println("Logou no sistema..");
-			return "";
-		}
-		return "";
+	public boolean logarNoSistema(Login login) {
+		
+		return login.getLogin().equals("teste") && login.getSenha().equals("123");
+		/*
+		 * if(login.getLogin().equals("teste") && login.getSenha().equals("123")){
+		 * System.out.println("Logou no sistema.."); return true; } return false;
+		 */
 	}
 
 }
