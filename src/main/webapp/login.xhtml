@@ -15,7 +15,23 @@
 
 		<p:outputLabel for="txtSenha" value="Senha:" />
 		<p:password id="txtSenha" value="#{loginMB.login.senha}" />
-		<p:commandButton value="Login" action="#{loginMB.loginDoSistema()}" ajax="false"/>
+		<p:commandButton value="Login" action="#{loginMB.loginDoSistema()}" ajax="false" update="panelDados"/>
+		
+	</p:panelGrid>
+	<br />
+			
+	
+	
+	<p:separator/>
+	<p:panelGrid id="panelDados" columns="2" layout="tabular" rendered="#{loginMB.sucessoLogin}">
+
+		<p:outputLabel value="Login:" />
+		<p:outputLabel value="#{loginMB.login.login}" />
+		
+		<p:outputLabel value="Senha:" />
+		<p:outputLabel value="#{loginMB.login.senha}" />
+		
+		<p:commandButton value="Salvar Dados" action="#{loginMB.salvarDadosLogin()}" ajax="false" />
 		
 	</p:panelGrid>
 	

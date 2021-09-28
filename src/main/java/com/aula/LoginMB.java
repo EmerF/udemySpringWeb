@@ -26,6 +26,10 @@ public class LoginMB {
 		sucessoLogin = loginService.loginDoSistema(getLogin());
 		System.out.println("Logou no sistema: " + sucessoLogin);
 	}
+	
+	public void salvarDadosLogin() {
+		loginService.salvarLogin(login);
+	}
 
 	public Login getLogin() {
 		return login;
