@@ -18,7 +18,7 @@ public class SpringWebJpaApplication {
 	
 	@Bean
 	public ServletRegistrationBean<FacesServlet> servletRegistration(){
-		return new ServletRegistrationBean<FacesServlet>(new FacesServlet(), "*.jsf");
+		return new ServletRegistrationBean<>(new FacesServlet(), "*.jsf");
 	}
 		
 	/*
