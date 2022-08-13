@@ -22,12 +22,12 @@ public class LoginService {
 		return login.getLogin().equals("teste") && login.getSenha().equals("123");
 
 	}
-	public void salvarDados(Login login) {
+	public Login salvarDados(Login login) {
 		System.out.println("Dados a salvar:");
 		System.out.println("LoginID: " + login.toString());
 		System.out.println("Login: " + login.getLogin());
 		System.out.println("Senha: " + login.getSenha());
-		loginRepository.save(login);
+		return loginRepository.save(login);
 		
 	}
 
