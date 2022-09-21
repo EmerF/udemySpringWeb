@@ -1,3 +1,4 @@
+/*
 package com.aula.rabbit;
 
 import com.rabbitmq.client.ConnectionFactory;
@@ -23,3 +24,4 @@ public class Send {
     }
 
 }
+*/
