@@ -38,13 +38,13 @@ public class ControllerTest {
 
         Login loginEntrada = Login.builder()
                 .login("Teste")
-                .senha("1234")
+                .senha("12345")
                 .build();
 
         when(loginService.salvarDados(loginEntrada)).thenReturn(Login.builder()
                         .idLogin(1l)
                         .login("Teste")
-                        .senha("1234")
+                        .senha("12345")
                 .build());
 
         Login loginRetorno = controller.salvar(loginEntrada);
