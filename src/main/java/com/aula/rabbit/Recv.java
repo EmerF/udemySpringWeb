@@ -1,3 +1,4 @@
+/*
 package com.aula.rabbit;
 
 import java.nio.charset.StandardCharsets;
@@ -28,3 +29,4 @@ public class Recv {
 	    }
 
 }
+*/
