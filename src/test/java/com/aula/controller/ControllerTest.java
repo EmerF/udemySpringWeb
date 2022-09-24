@@ -48,7 +48,7 @@ public class ControllerTest {
                 .build());
 
         Login loginRetorno = controller.salvar(loginEntrada);
-        assertEquals(loginEntrada.getLogin(), loginRetorno.getLogin());
+        assertEquals(loginEntrada.getLogin(), 2);
         assertEquals(loginEntrada.getSenha(), loginRetorno.getSenha());
         assertNotNull(loginRetorno.getIdLogin());
     }

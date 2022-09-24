@@ -32,7 +32,7 @@ class SpringWebJpaApplicationTests {
 		when(loginRepository.save(login)).thenReturn(login);
 
 		Login returnedLogin = loginService.salvarDados(login);
-		Assertions.assertEquals(returnedLogin.getLogin(), login.getLogin());
+		Assertions.assertEquals(returnedLogin.getLogin(), 2);
 		Assertions.assertEquals(returnedLogin.getSenha(), login.getSenha());
 
 	}
