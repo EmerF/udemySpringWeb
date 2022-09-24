@@ -31,6 +31,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: projeto-aula-docker #Must be unique in Heroku
           heroku_email: griloemer@gmail.com
-          java-version: '11'
-          distribution: 'temurin'
 
