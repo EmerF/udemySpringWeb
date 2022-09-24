@@ -30,4 +30,8 @@ public class LoginService {
 		return loginRepository.save(login);
 		
 	}
+
+	public void deleteLoginById(Long id) {
+		loginRepository.deleteById(id);
+	}
 }

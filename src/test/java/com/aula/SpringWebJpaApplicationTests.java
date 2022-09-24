@@ -7,9 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.Assert;
 
 import static org.mockito.Mockito.when;
 
@@ -25,10 +23,11 @@ class SpringWebJpaApplicationTests {
 
 	@Test
 	public void testCriarLogin(){
-		Login login = new Login();
-		login.setLogin("Teste");
-		login.setSenha("1234");
-
+		Login login = Login.builder()
+				.idLogin(1l)
+				.login("Teste")
+				.senha("1234")
+				.build();
 
 		when(loginRepository.save(login)).thenReturn(login);
 
