@@ -5,10 +5,10 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "RodandoNoIntelliMostrandoLogin" ]
+    branches: [ "DeployHerokuGitHubAction" ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,17 +18,30 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
+      - name: Test
+        run: mvn clean verify
+  build:
+    needs: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build
         run: mvn -B package --file pom.xml
 
   deploy:
-    needs: build
+    needs: Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: projeto-aula-docker #Must be unique in Heroku
+          heroku_app_name: aula-deploy-actions
           heroku_email: griloemer@gmail.com
 
